@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="RESTful Web Service">
+      <meta name="keywords" content="docker,RestFUL,WEB SERVICE,python,flask,Games">
+      <meta name="author" content="swapnil Vinay">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>Movies</title>
+      <style>     
+        html, body {
+            padding:10px;
+            margin:10px;
+            background-color: rgb(88, 151, 187);
+        }
+        header h1 {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+         table {
+            border-collapse: collapse;
+            width: 100%;
+         }
+         th, td {
+            text-align: left;
+            padding: 8px;
+         }
+         tr:nth-child(even){
+             background-color: #c94040
+         }
+         th {
+            background-color: rgb(39, 81, 199);
+            color: rgb(223, 126, 71);
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+          <h1> My Favorite Movies Of All Time</h1>
+      </header>
+      <main>
+         <table class="table table-dark">
+            <thead>
+               <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Director</th>
+                  <th scope="col">Type</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for item in items %}
+               <tr>
+                  <td scope="row"> {{ item.id }} </td>
+                  <td scope="row"> {{ item.name }} </td>
+                  <td scope="row"> {{ item.date }} </td>
+                  <td scope="row"> {{ item.director }} </td>
+                  <td scope="row"> {{ item.type }} </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      </main>
+   </body>
+</html>
